@@ -5,7 +5,7 @@ import edu.school21.renderer.Renderer;
 public class PrinterWithPrefixImpl implements Printer{
 
     private Renderer renderer;
-    private String prefix = "";
+    private String prefix = "prefix";
 
     public void setPrefix(String prefix) {
         this.prefix = prefix;
