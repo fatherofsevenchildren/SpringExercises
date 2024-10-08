@@ -3,9 +3,17 @@ package edu.school21.spring.service.models;
 import java.util.Objects;
 
 public class User {
-
-    Long id;
+    long id;
     String email;
+
+    public User(long id, String email) {
+        this.id = id;
+        this.email = email;
+    }
+
+    public String getEmail() {
+        return email;
+    }
 
     @Override
     public boolean equals(Object object) {
@@ -18,5 +26,13 @@ public class User {
     @Override
     public int hashCode() {
         return Objects.hash(id, email);
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 }

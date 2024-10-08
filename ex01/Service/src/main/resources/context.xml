@@ -6,4 +6,20 @@
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <bean id="hikariConfig"
+          class="com.zaxxer.hikari.HikariConfig">
+    <constructor-arg value="/db.properties"/>
+    </bean>
+
+    <bean id="hikariDataSource"
+          class="com.zaxxer.hikari.HikariDataSource">
+    <constructor-arg ref="hikariConfig"/>
+    </bean>
+
+    <bean id="usersRepositoryJdbc"
+          class="edu.school21.spring.service.repositories.UserRepositoryJdbcImpl">
+        <constructor-arg ref="hikariDataSource"/>
+    </bean>
+
 </beans>
