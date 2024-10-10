@@ -3,8 +3,11 @@ package edu.school21.spring.service.models;
 import java.util.Objects;
 
 public class User {
+
     long id;
     String email;
+
+    public User() {}
 
     public User(long id, String email) {
         this.id = id;
@@ -13,6 +16,18 @@ public class User {
 
     public String getEmail() {
         return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     @Override
@@ -28,11 +43,4 @@ public class User {
         return Objects.hash(id, email);
     }
 
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
 }

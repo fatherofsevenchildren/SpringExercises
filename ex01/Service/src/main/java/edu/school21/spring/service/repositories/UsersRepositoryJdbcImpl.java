@@ -13,11 +13,11 @@ import java.util.Optional;
 
 import static java.lang.System.out;
 
-public class UserRepositoryJdbcImpl implements UserRepository {
+public class UsersRepositoryJdbcImpl implements UsersRepository {
 
     private final DataSource dataSource;
 
-    public UserRepositoryJdbcImpl(DataSource dataSource) {
+    public UsersRepositoryJdbcImpl(DataSource dataSource) {
         this.dataSource = dataSource;
     }
 
@@ -104,7 +104,7 @@ public class UserRepositoryJdbcImpl implements UserRepository {
     @Override
     public void delete(Long id) {
         try (Connection connection = dataSource.getConnection()) {
-            String query = "DROP users WHERE id=?";
+            String query = "DELETE FROM users WHERE id=?";
             PreparedStatement preparedStatement = connection.prepareStatement(query);
             preparedStatement.setLong(1, id);
             preparedStatement.executeUpdate();
