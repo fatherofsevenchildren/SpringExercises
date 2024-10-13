@@ -3,7 +3,7 @@ package edu.school21.spring.service.config;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.*;
 import org.springframework.core.env.Environment;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
@@ -14,14 +14,10 @@ import java.util.Objects;
 @Configuration
 @ComponentScan(basePackages = "edu.school21.spring.service")
 @PropertySource("classpath:db.properties")
+@RequiredArgsConstructor
 public class ApplicationConfig {
 
     private final Environment environment;
-
-    @Autowired
-    public ApplicationConfig(Environment environment) {
-        this.environment = environment;
-    }
 
     @Bean
     @Primary

@@ -1,9 +1,7 @@
-package edu.school21.spring.service.applicatiion;
+package edu.school21.spring.service.application;
 
 import edu.school21.spring.service.config.ApplicationConfig;
-import edu.school21.spring.service.repositories.UsersRepository;
 import edu.school21.spring.service.services.UsersService;
-import edu.school21.spring.service.services.UsersServiceImpl;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class Main {
