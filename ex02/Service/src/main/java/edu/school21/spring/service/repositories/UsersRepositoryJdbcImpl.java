@@ -3,6 +3,7 @@ package edu.school21.spring.service.repositories;
 import edu.school21.spring.service.models.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import javax.sql.DataSource;
 import java.sql.Connection;
@@ -15,7 +16,7 @@ import java.util.Optional;
 
 import static java.lang.System.out;
 
-@Component("usersRepositoryJdbc")
+@Repository("usersRepositoryJdbc")
 public class UsersRepositoryJdbcImpl implements UsersRepository {
 
     private final DataSource dataSource;

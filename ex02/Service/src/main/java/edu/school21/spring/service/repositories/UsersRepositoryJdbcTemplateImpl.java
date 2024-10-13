@@ -5,12 +5,13 @@ import edu.school21.spring.service.models.User;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import javax.sql.DataSource;
 import java.util.List;
 import java.util.Optional;
 
-@Component("usersRepositoryJdbcTemplate")
+@Repository("usersRepositoryJdbcTemplate")
 public class UsersRepositoryJdbcTemplateImpl implements UsersRepository {
 
     private final JdbcTemplate jdbcTemplate;
